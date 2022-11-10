@@ -39,7 +39,7 @@ function DomDices() {
           <img id="dice-1" src="./images/dice6@2x.png" alt="" />
           <img id="dice-2" src="./images/dice3@2x.png" alt="" />
         </div>
-        <button className="roll-dice" onclick={handleRollDice}>
+        <button className="roll-dice" onlick={handleRollDice}>
           Roll Dice
         </button>
       </div>
