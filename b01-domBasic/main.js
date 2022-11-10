@@ -1,8 +1,12 @@
-function getVal() {
-  let xhtml = `<span class="text">???</span>`;
-  const val = document.getElementById("fullname").value;
-  if (val) {
-    xhtml = `<span class="text">` + val + `</span>`;
-    document.getElementById("input-value").html(xhmtl);
-  }
+const elFullName = document.getElementById('fullname');
+const elText = document.querySelector('.text');
+
+function handleChangeValue(evt) {
+  renderFullName(evt.target.value);
 }
+
+function renderFullName(fullName) {
+  elText.innerText = fullName;
+}
+
+elFullName.addEventListener('input', handleChangeValue);
