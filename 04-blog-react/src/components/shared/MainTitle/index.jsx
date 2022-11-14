@@ -1,3 +1,4 @@
+import "../MainTitle/main-title.css";
 function MainTile() {
   return (
     <div className="main-title spacing">

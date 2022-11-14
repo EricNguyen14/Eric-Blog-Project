@@ -1,5 +1,6 @@
-import ArticleLatestItems from "./ArticleLatestItems";
-import MainTile from "./MainTile";
+import ArticleItem from "../ArticleItem";
+import MainTitle from "../shared/MainTitle/index";
+import "./latest-news-list.css";
 function ArticleLatest() {
   return (
     <>
@@ -7,14 +8,21 @@ function ArticleLatest() {
       <div className="latest-news section">
         <div className="tcl-container">
           {/* Main Title */}
-          <MainTile />
+          <MainTitle />
           {/* End Main Title */}
           {/* Latest News List */}
           <div className="latest-news__list spacing">
             {/* Latest news card */}
-            <ArticleLatestItems></ArticleLatestItems>
-            <ArticleLatestItems></ArticleLatestItems>
-            <ArticleLatestItems></ArticleLatestItems>
+            <div className="latest-news__card">
+              <ArticleItem />
+            </div>
+            <div className="latest-news__card">
+              <ArticleItem />
+            </div>
+            <div className="latest-news__card">
+              <ArticleItem />
+            </div>
+
             {/* End Latest news card */}
           </div>
           {/* End Latest News List */}
