@@ -4,7 +4,7 @@ import ArticleGeneral from "../components/HomePage/ArticleGeneral";
 import "../components/HomePage/article-item.css";
 import "../components/HomePage/ArticleLatest/latest-news-list.css";
 import "../components/HomePage/ArticlePopular/popular-news-list.css";
-import "../components/HomePage/main-title.css";
+import "../components/HomePage/ArticleLatest/main-title.css";
 import "../components/Button/button.css";
 
 function HomePage() {

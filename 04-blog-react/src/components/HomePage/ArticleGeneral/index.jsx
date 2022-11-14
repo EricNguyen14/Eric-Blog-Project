@@ -290,7 +290,7 @@ function ArticleGeneral() {
           </div>
         </div>
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <button class="btn btn-primary btn-size-large">
+          <button className="btn btn-primary btn-size-large">
             <svg
               fill="currentColor"
               xmlns="http://www.w3.org/2000/svg"
@@ -303,9 +303,9 @@ function ArticleGeneral() {
                 cy="50"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="10"
+                strokeWidth="10"
                 r="35"
-                stroke-dasharray="164.93361431346415 56.97787143782138"
+                strokeDasharray="164.93361431346415 56.97787143782138"
                 transform="rotate(120.057 50 50)"
               >
                 <animateTransform
