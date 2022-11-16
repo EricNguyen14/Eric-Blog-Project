@@ -4,8 +4,6 @@ import ArticleGeneral from "../components/ArticleGeneral";
 
 import "../components/ArticlePopular/popular-news-list.css";
 
-import "../components/Button/button.css";
-
 function HomePage() {
   return (
     <>

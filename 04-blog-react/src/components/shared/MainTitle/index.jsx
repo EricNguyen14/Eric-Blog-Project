@@ -1,8 +1,15 @@
+import Button from "../Button/Button";
 import "../MainTitle/main-title.css";
-function MainTile() {
+function MainTile({ children, type, btn }) {
+  let clsName = "main-title spacing ";
   return (
-    <div className="main-title spacing">
-      <h2>Latest Articles</h2>
+    <div className={clsName + type}>
+      <h2>{children}</h2>
+      {btn && (
+        <Button as="a" type="default" href="/">
+          View More
+        </Button>
+      )}
     </div>
   );
 }
