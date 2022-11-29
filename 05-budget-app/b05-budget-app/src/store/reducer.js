@@ -21,7 +21,8 @@ function budgetReducer(state = initialState, action) {
     case ACT_ADD_ITEM:
       let item = action.payload;
       let newList = [...state.listData];
-      newList = [...newList, item];
+      // newList = [...newList, item];
+      newList.push(item);
       return { ...state, listData: newList };
     default:
       return state;

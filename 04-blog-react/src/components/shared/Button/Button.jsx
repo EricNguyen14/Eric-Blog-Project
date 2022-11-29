@@ -1,38 +1,47 @@
 import "../Button/button.css";
 import Iconloading from "../IconLoading";
-function Button({ type, children, size, as, isShowIcon, href, ...restProps }) {
-  const typeClass = {
-    default: "btn btn-default",
-    primary: "btn btn-primary",
-    category: "btn btn-category",
-  };
-  let type1 = "";
-  if (type === "default") {
-    type1 = typeClass.default;
+import cls from "classnames";
+
+function Button({
+  type,
+  children,
+  size,
+  as,
+  isShowIcon,
+  htmlType = "button",
+  iconPos = "left",
+  className,
+  ...restProps
+}) {
+  const classes = cls(
+    "btn",
+    {
+      "btn-default": type === "default",
+      "btn-category": type === "category",
+      "btn-primary": type === "primary",
+      "btn-size-large": size === "large",
+    },
+    className
+  );
+  const content = (
+    <>
+      {isShowIcon && iconPos === "left" && <Iconloading />}
+      {children}
+      {isShowIcon && iconPos === "right" && <Iconloading />}
+    </>
+  );
+  if (as === "a") {
+    return (
+      <a className={classes} {...restProps}>
+        {content}
+      </a>
+    );
   }
-  if (type === "primary") {
-    type1 = typeClass.primary;
-  }
-  if (type === "category") {
-    type1 = typeClass.category;
-  }
-  let size1 = ` btn-size-` + size;
 
   return (
-    <>
-      {as === "button" && (
-        <button className={type1 + size1}>
-          {isShowIcon && <Iconloading />}
-          {children}
-        </button>
-      )}
-      {as === "i" && <i className={type}></i>}
-      {as === "a" && (
-        <a href={href} className={type1 + size1}>
-          {children}
-        </a>
-      )}
-    </>
+    <button className={classes} type={htmlType} {...restProps}>
+      {content}
+    </button>
   );
 }
 export default Button;
