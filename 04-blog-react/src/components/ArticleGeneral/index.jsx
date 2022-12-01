@@ -75,7 +75,11 @@ function ArticleGeneral() {
     <div className="articles-list section">
       <div className="tcl-container">
         {/* Main Title */}
-        <MainTitle type="d-flex tcl-jc-between tcl-ais-center" btn>
+        <MainTitle
+          type="d-flex tcl-jc-between tcl-ais-center"
+          btn
+          btnTitle="View More"
+        >
           News List
         </MainTitle>
 

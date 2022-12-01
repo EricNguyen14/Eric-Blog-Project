@@ -1,8 +1,11 @@
-import Button from "../shared/Button/Button";
-import AuthorInfor from "./AuthorInfor";
+import AuthorInfor from "./ArticleItemAuthorInfor";
 import "./article-item.css";
+import ArticleItemCategory from "./ArticleItemCategory";
+import ArticleItemDesc from "./ArticleItemDesc";
+import ArticleItemStats from "./ArticleItemStats";
+import ArticleItemTitle from "./ArticleItemTitle";
+import cls from "classnames";
 function ArticleItem({
-  authorInfor,
   title,
   thumb,
   typeArticle,
@@ -15,56 +18,17 @@ function ArticleItem({
   itemCategory,
   itemStats,
   itemDesc,
-  listArticle,
 }) {
-  let typeArticleClassName = "";
-  let articleStyle = "";
-  let articlePos = "";
-  if (typeArticle === "ArticlePopular") {
-    typeArticleClassName = "popular-news__list--card";
-  }
-  if (typeArticle === "ArticleGeneral") {
-    typeArticleClassName = "tcl-col-12 tcl-col-md-6";
-  }
-  if (typeArticle === "ArticleLatest") {
-    typeArticleClassName = "latest-news__card";
-  }
-  if (stylePos === "style-card") {
-    articlePos = " style-card ";
-  }
-  if (style === "style-row") {
-    articleStyle = "style-row";
-  }
-  if (itemCategory) {
-    itemCategory = (
-      <ul className="article-item__categories">
-        <li>
-          <Button as="a" type="category" href={itemCategory}>
-            Category1
-          </Button>
-        </li>
-        <li>
-          <Button as="a" type="category" href={itemCategory}>
-            Category2
-          </Button>
-        </li>
-      </ul>
-    );
-  }
-  if (itemStats) {
-    itemStats = (
-      <ul className="article-item__stats">
-        <li>
-          <i className="icons ion-ios-eye" />
-          <span className="text">Views</span>
-        </li>
-      </ul>
-    );
-  }
-  if (itemDesc) {
-    itemDesc = <p className="article-item__desc">{itemDesc}</p>;
-  }
-  const articleClassName = "article-item" + articlePos + articleStyle;
+  const articleClassName = cls("article-item", {
+    "style-card": stylePos === "style-card",
+    "style-row": style === "style-row",
+  });
+  const typeArticleClassName = cls({
+    "popular-news__list--card": typeArticle === "ArticlePopular",
+    "tcl-col-12 tcl-col-md-6": typeArticle === "ArticleGeneral",
+    "latest-news__card": typeArticle === "ArticleLatest",
+  });
+
   return (
     <div className={typeArticleClassName}>
       <article className={articleClassName}>
@@ -72,14 +36,15 @@ function ArticleItem({
           <a href="/">{thumb}</a>
         </div>
         <div className="article-item__content">
-          {itemCategory}
-          {itemStats}
-          <h2 className="article-item__title">
-            <a href="/only-someone-who's-seen-the-mummy-will-pass-this/">
-              {title}
-            </a>
-          </h2>
-          {itemDesc}
+          {itemCategory && (
+            <ArticleItemCategory
+              itemCategory={itemCategory}
+            ></ArticleItemCategory>
+          )}
+          {itemStats && <ArticleItemStats></ArticleItemStats>}
+          <ArticleItemTitle title={title}></ArticleItemTitle>
+
+          {itemDesc && <ArticleItemDesc itemDesc={itemDesc}></ArticleItemDesc>}
           <AuthorInfor
             isShowAuthorImg={isShowAuthorImg}
             date={date}

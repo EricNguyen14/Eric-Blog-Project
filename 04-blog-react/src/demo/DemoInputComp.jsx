@@ -7,6 +7,14 @@ function DemoInputComp() {
       <Input label="Password" type="password" />
       <Input type="text" />
       <Input type="text" isSearch />
+      <Input
+        type="text"
+        divClass="header-search"
+        label="Search"
+        placeholder="Enter search here..."
+        aria-label="Seach"
+        name="query"
+      />
     </div>
   );
 }

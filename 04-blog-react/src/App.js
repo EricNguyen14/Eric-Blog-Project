@@ -12,9 +12,9 @@ function App() {
     <div className="wrapper-content">
       <Header />
       <div className="spacing"></div>
-      <DemoInputComp></DemoInputComp>
-      <DemoButtonComp></DemoButtonComp>
-      {/* <Login /> */}
+      {/* <DemoInputComp></DemoInputComp>
+      <DemoButtonComp></DemoButtonComp> */}
+      <Login />
       <HomePage />
       <div className="spacing"></div>
       <Footer />

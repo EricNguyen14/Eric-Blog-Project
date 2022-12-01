@@ -1,4 +1,4 @@
-import DateAndTime from "./DateAndTime";
+import DateAndTime from "./ArticleItemDateAndTime";
 
 function AuthorInfor({ isShowAuthorImg, date, time, authorName }) {
   let authorImg = "";

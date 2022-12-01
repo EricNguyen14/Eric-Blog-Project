@@ -1,6 +1,7 @@
 import { useState } from "react";
 import cls from "classnames";
-function Input({ type, label, ...restProps }) {
+
+function Input({ type, label, isSearch, ...restProps }) {
   const [localType, setLocalType] = useState(type);
   function handlePassWord() {
     if (localType === "password") {
@@ -14,16 +15,27 @@ function Input({ type, label, ...restProps }) {
     "ion-eye": localType === "password",
     "ion-eye-disabled": localType === "text",
   });
+
   return (
-    <div class="tcl-container">
-      <div className="form-control">
-        {label && <label>{label}</label>}
-        {type === "password" && (
-          <i class={classesIconPassword} onClick={handlePassWord}></i>
-        )}
-        <input type={localType} {...restProps} />
+    (isSearch && (
+      <div className="header-search">
+        <input
+          className="header-search__input"
+          type={localType}
+          {...restProps}
+        />
       </div>
-    </div>
+    )) || (
+      <div className="tcl-container">
+        <div className="form-control">
+          {label && <label>{label}</label>}
+          {type === "password" && (
+            <i className={classesIconPassword} onClick={handlePassWord}></i>
+          )}
+          <input type={localType} {...restProps} />
+        </div>
+      </div>
+    )
   );
 }
 export default Input;

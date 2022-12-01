@@ -12,6 +12,7 @@ function ArticlePopular() {
             type="d-flex tcl-jc-between tcl-ais-center"
             size="large"
             btn
+            btnTitle="View More"
           >
             Popular Article
           </MainTitle>
