@@ -11,7 +11,7 @@ const listArticle = [
     thumb: (
       <img src="assets/images/blog-1.jpg" alt="assets/images/blog-1.jpg" />
     ),
-    title: "Học Lập Trình Tại ZendVn",
+    title: "olala",
   },
   {
     typeArticle: "ArticleLatest",
@@ -22,7 +22,7 @@ const listArticle = [
     thumb: (
       <img src="assets/images/blog-1.jpg" alt="assets/images/blog-1.jpg" />
     ),
-    title: "Học Lập Trình Tại ZendVn",
+    title: "abcde",
   },
   {
     typeArticle: "ArticleLatest",

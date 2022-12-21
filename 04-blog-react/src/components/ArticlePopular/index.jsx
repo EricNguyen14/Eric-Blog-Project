@@ -29,7 +29,7 @@ function ArticlePopular() {
                       alt="assets/images/blog-1.jpg"
                     />
                   }
-                  title="Học Lập Trình Tại ZendVn"
+                  title="Meejt"
                   typeArticle="ArticlePopular"
                   stylePos="style-card"
                   isShowAuthorImg
